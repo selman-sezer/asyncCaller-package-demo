@@ -28,7 +28,7 @@
     "declarationMap": true,
 
 
-    "lib": ["es2022", "esnext"]
+    "lib": ["es2022", "esnext", "dom"]
   }
 }
 
