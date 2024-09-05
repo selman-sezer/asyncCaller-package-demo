@@ -15,3 +15,6 @@
   "files": ["dist"],
   "type": "module"
 }
+{
+  "license": "MIT"
+}
