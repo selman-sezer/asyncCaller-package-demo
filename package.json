@@ -14,7 +14,9 @@
   },
   "files": ["dist"],
   "type": "module"
-}
-{
+   "scripts": {
+    "build": "tsc"
+  }
   "license": "MIT"
 }
+
