@@ -1,6 +1,6 @@
-import { TokenBucket } from '../tokenBucket/index';
-import { type TokenBucketOptions } from '../tokenBucket/types';
-import type { RetryOptions } from './types';
+import { TokenBucket } from '../tokenBucket/index.js';
+import { type TokenBucketOptions } from '../tokenBucket/types.js';
+import type { RetryOptions } from './types.js';
 
 const defaultTokenBucketOptions: TokenBucketOptions = {
   capacity: 10,

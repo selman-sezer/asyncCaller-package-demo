@@ -1,4 +1,4 @@
-import type { TokenBucketOptions } from './types';
+import type { TokenBucketOptions } from './types.js';
 
 export class TokenBucket {
   private _tokens: number;
