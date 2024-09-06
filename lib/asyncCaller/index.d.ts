@@ -1,5 +1,5 @@
-import { type TokenBucketOptions } from "../tokenBucket/types";
-import type { RetryOptions } from "./types";
+import { type TokenBucketOptions } from '../tokenBucket/types';
+import type { RetryOptions } from './types';
 /**
  * A class for making asynchronous calls with retry, concurrency, and rate limiting capabilities.
  * Creates an instance of AsyncCaller.
@@ -33,25 +33,28 @@ import type { RetryOptions } from "./types";
  * });
  */
 export declare class AsyncCaller {
-    private readonly _tokenBucket;
-    private readonly _retryOptions;
-    private readonly _concurrency;
-    private runningTasks;
-    private readonly queue;
-    verbose: boolean;
-    constructor(options?: {
-        tokenBucketOptions?: TokenBucketOptions;
-        retryOptions?: RetryOptions;
-        concurrency?: number;
-    }, verbose?: boolean);
-    call<T>(fn: () => Promise<T>): Promise<T>;
-    private processTaskQueue;
-    private extractErrorMessageFromResponse;
-    private executeWithRetry;
-    private executeAndHandleErrors;
-    isClientSideError(errOrResponse: any): boolean;
-    isRateLimitedError(errOrResponse: any): boolean;
-    extractStatusCodeProperties(err: any): number[];
-    private calculateRetryDelay;
-    private calculateDefaultDelay;
+  private readonly _tokenBucket;
+  private readonly _retryOptions;
+  private readonly _concurrency;
+  private runningTasks;
+  private readonly queue;
+  verbose: boolean;
+  constructor(
+    options?: {
+      tokenBucketOptions?: TokenBucketOptions;
+      retryOptions?: RetryOptions;
+      concurrency?: number;
+    },
+    verbose?: boolean,
+  );
+  call<T>(fn: () => Promise<T>): Promise<T>;
+  private processTaskQueue;
+  private extractErrorMessageFromResponse;
+  private executeWithRetry;
+  private executeAndHandleErrors;
+  isClientSideError(errOrResponse: any): boolean;
+  isRateLimitedError(errOrResponse: any): boolean;
+  extractStatusCodeProperties(err: any): number[];
+  private calculateRetryDelay;
+  private calculateDefaultDelay;
 }

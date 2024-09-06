@@ -1,6 +1,6 @@
 export interface TokenBucketOptions {
-    capacity: number;
-    fillPerWindow: number;
-    windowInMs: number;
-    initialTokens?: number;
+  capacity: number;
+  fillPerWindow: number;
+  windowInMs: number;
+  initialTokens?: number;
 }

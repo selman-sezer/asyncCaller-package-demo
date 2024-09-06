@@ -1,1 +1,1 @@
-export * from "./removeMatterCode";
+export * from './removeMatterCode';

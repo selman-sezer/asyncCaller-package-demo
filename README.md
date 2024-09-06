@@ -8,7 +8,7 @@ It is used with TokenBucket module that you can find at "url".
 - **Rate Limiting**: Control the rate of requests using a token bucket algorithm.
 - **Retry Mechanism**: Automatically retry failed requests with customizable retry options.
 - **Automatic Check For 429 Erros**:If the function sent to the async caller is a function called with fetch(), it automatically checks the incoming headers for 429 and make the necessary adjustments to the tokenbucket of the caller accordingly if there is a 429 error.
-The delay amount is determined according to "Retry-After" header of the response. It works with Headers object used in modern fetch API and also plain objects. If there is no "Retry-After" to be found then default formula is used to calculate the delay amount by using backoffFactor of retryOptions (check Configuration Options - RetryOptions below).
+  The delay amount is determined according to "Retry-After" header of the response. It works with Headers object used in modern fetch API and also plain objects. If there is no "Retry-After" to be found then default formula is used to calculate the delay amount by using backoffFactor of retryOptions (check Configuration Options - RetryOptions below).
 - **Other Errors**: If the function sent to the async caller is fetch, it does not retry with error codes between 400 and 499. (except 429)
 - **Concurrency Control**: Limit the number of concurrent tasks.
 - **Type Safety**: Ensures type-safe responses when using `fetch`. If function using fetch is typesafe, then asyncCaller also returns typesafe value.
@@ -43,9 +43,10 @@ async function fetchData() {
   // Your async function logic
 }
 
-asyncCaller.call(fetchData)
-  .then(result => console.log(result))
-  .catch(error => console.error(error));
+asyncCaller
+  .call(fetchData)
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
 ```
 
 ### Set the tokenBucketOptions
@@ -66,9 +67,10 @@ async function fetchData() {
   // Your async function logic
 }
 
-asyncCaller.call(fetchData)
-  .then(result => console.log(result))
-  .catch(error => console.error(error));
+asyncCaller
+  .call(fetchData)
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
 ```
 
 ### Set the retryOptions
@@ -97,13 +99,14 @@ async function fetchData() {
   // Your async function logic
 }
 
-asyncCaller.call(fetchData)
-  .then(result => console.log(result))
-  .catch(error => console.error(error));
+asyncCaller
+  .call(fetchData)
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
 ```
 
-
 ### Sending All Requests At Once
+
 ```typescript
 /*
 With the help of async caller, you can completely transfer the rate limiting issue to the async caller function and
@@ -162,10 +165,11 @@ AsyncCaller: Max retries exceeded. Rejecting...
 ### RetryOptions
 
 - **maxRetries**: The maximum number of retries. Default is 3. The maxRetries is the number of the extra tries.
-For example if maxRetries is set to 10, the total number of tries would be 11 with the first try.
+  For example if maxRetries is set to 10, the total number of tries would be 11 with the first try.
 - **minDelayInMs**: The minimum delay between retries in milliseconds. Default is 1000.
 - **maxDelayInMs**: The maximum delay between retries in milliseconds. Default is 10000.
 - **backoffFactor**: The factor by which the delay should be increased after each retry. Default is 2.
+
 ```typescript
 /* In this example maxRetries is set to 1. It means that in total it will be tried two times (i.e. once for first try, once for retry.
   The minimum delay between retries (i.e. minDelayInMs) is set to 100 milliseconds.
@@ -183,16 +187,18 @@ const asyncCaller = new AsyncCaller({
   },
 });
 ```
+
 ### Concurrency
 
 - **concurrency**: The maximum number of concurrent tasks allowed. Default is 5.
+
 ```typescript
 /* concurrency is set to 10. So maximum 10 tasks can be handles concurrently.
-*/
+ */
 import { AsyncCaller } from 'async-caller';
 
 const asyncCaller = new AsyncCaller({
-    retryOptions: {
+  retryOptions: {
     maxRetries: 10,
     minDelayInMs: 300,
     maxDelayInMs: 15000,
