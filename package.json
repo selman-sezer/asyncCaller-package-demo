@@ -2,6 +2,7 @@
   "name": "@glf/asyncCaller-package-demo",
   "version": "1.0.0",
   "description": "A demo package for asyncCaller",
+  "main": "dist/index.js",
   "keywords": [
     "asyncCaller",
     "typescript",
@@ -22,8 +23,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build && npm run check-format",
     "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "ci": "npm run build && npm run check-format",
     "check-exports": "attw --pack ."
   },
   "license": "MIT",
