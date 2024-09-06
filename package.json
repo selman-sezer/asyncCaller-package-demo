@@ -15,7 +15,8 @@
   "files": ["dist"],
   "type": "module",
    "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "ci": "npm run build"
   },
   "license": "MIT"
 }
