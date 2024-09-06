@@ -20,8 +20,14 @@
     "dist"
   ],
   "type": "module",
+<<<<<<< HEAD
   "scripts": {
     "build": "tsc"
+=======
+   "scripts": {
+    "build": "tsc",
+    "ci": "npm run build"
+>>>>>>> 935e9706e5bdf56a5165b53b27bb0df459eac99f
   },
   "license": "MIT",
   "devDependencies": {
