@@ -2,7 +2,11 @@
   "name": "@glf/asyncCaller-package-demo",
   "version": "1.0.0",
   "description": "A demo package for asyncCaller",
-  "keywords": ["asyncCaller", "typescript", "async"],
+  "keywords": [
+    "asyncCaller",
+    "typescript",
+    "async"
+  ],
   "homepage": "https://github.com/selman-sezer/asyncCaller-package-demo",
   "bugs": {
     "url": "https://github.com/selman-sezer/asyncCaller-package-demo/issues"
@@ -12,11 +16,15 @@
     "type": "git",
     "url": "git+https://github.com/selman-sezer/asyncCaller-package-demo.git"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
-   "scripts": {
+  "scripts": {
     "build": "tsc"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.5.4"
+  }
 }
-
